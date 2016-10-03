@@ -1,32 +1,46 @@
+/*Kaitlyn Chan
+ * Pair Programming Activity
+ * Takes in user input and processes the numbers. 
+ * @10/2/16
+ * 1st Period
+ */
 import java.util.*;
 public class PairProgramming {
 	public static void main (String[] args){
 		Scanner userInput = new Scanner (System.in);
-		int evenMax = 0;
-		int min = 0;
-		int max = 0;
+		int evenMax = Integer.MIN_VALUE;
+		int min = Integer.MAX_VALUE;
+		int max = Integer.MIN_VALUE;
 		int evenTotal = 0;
 		System.out.println("How many loops do you want?");
 		int loops = userInput.nextInt();
-		for (int number = loops; number <= loops; number++){
-			System.out.println("enter in next number");
+		for (int number = 1; number <= loops; number++){
+			System.out.println("Enter in next number");
 			int nextNumber = userInput.nextInt();
-			if (nextNumber > max){
-				max = nextNumber;
-			}
-			else{
-				min = nextNumber;
-			}
 			if (nextNumber % 2 == 0){
 				evenTotal += nextNumber;
 				if(nextNumber > evenMax){
 					evenMax = nextNumber;
 				}
 			}
+			if (nextNumber > max){
+				max = nextNumber;
+				
+			}
+			
+			
+			
+			if (nextNumber < min){
+			min = nextNumber;
+			}
+			
 			
 		}
-		System.out.println(evenTotal);
-	}
-	
+		System.out.println("Largest number is: " + max);
+		System.out.println("Smallest number is: " + min);
+		System.out.println("Largest Even number is: " + evenMax);
+		System.out.println("Even Total is: " + evenTotal);
+		
+	}	
 
 }
